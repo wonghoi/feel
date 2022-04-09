@@ -1,0 +1,1 @@
+from platform import platform as ver_os

@@ -1,0 +1,1 @@
+pipreqs . --mode no-pin --force
