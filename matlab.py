@@ -43,6 +43,9 @@ from .lib.list_attrib import list_attrib
 from .lib.list_functions import list_functions        
 from .lib.methods import methods
 
+### Lists
+from .lib.unpack_and_stack_lists import unpack_and_stack_lists
+
 ### Path manipulation
 # MATLAB's cd without input shows as pwd, not used here
 from glob import escape as escape_pathnames
