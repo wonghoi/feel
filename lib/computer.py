@@ -11,10 +11,10 @@ def computer(req=None):
     req = req.lower()
     if req == 'os':
         # like 'windows', 'linux', 'darwin', 'java'
-        return platform.machine()
+        return platform.system()
     if req == 'arch':
         # like 'amd64'
-        return platform.system()
+        return platform.machine()
     if req in ['bits', 'bits_interpreter', 'bits_python']:
         # +1 to account for sign bit
         return sys.maxsize.bit_count()+1

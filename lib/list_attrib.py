@@ -18,5 +18,7 @@ def list_attrib(x):
         dummy = dummy_class
     elif inspect.isroutine(x):
         dummy = dummy_function
+    else:
+        raise TypeError(f"{type(x)} unsupported. Call with type(x) if it's an instantiation.")
     
     return list(sorted(set(dir(x))-set(dir(dummy))))
