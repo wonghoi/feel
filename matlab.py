@@ -61,7 +61,7 @@ from .lib.rdir import rdir
 
 # python_executable, extract_folder, python_executable
 from .lib.pythonroot import *
-# fileparts, path2folder_tail, path2head_ext
+# fileparts, path2folder_tail, path2head_ext, get_driveletter_or_mountpath
 from .lib.fileparts import *
 from os.path import join as fullfile
 from os.path import exists as exist_file_or_dir
