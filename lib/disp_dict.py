@@ -8,10 +8,7 @@ def print_dict_item(item, N_key=20, N_val=75, sep=' : ', shortener=None):
     try:
         rhs = str(val)                
     except:
-        try:
-            rhs = type(val)
-        except:
-            raise TypeError("Type cannot be cased into string for display")
+        rhs = type(val)        
         
     N_rhs_indent = N_key+len(sep)
     rhs_indent   = ' '*N_rhs_indent
