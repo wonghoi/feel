@@ -50,8 +50,8 @@ from .lib.unpack_and_stack_lists import unpack_and_stack_lists
 ### Path manipulation
 # MATLAB's cd without input shows as pwd, not used here
 from glob import escape as escape_pathnames
-from os import chdir as cd
 from os import chdir
+from .lib.cd import cd
 from os import mkdir as md
 from os import mkdir
 from os import getcwd as pwd
