@@ -48,13 +48,13 @@ reach me at <wonghoi+github@humgar.com>
 
 ####  (most natural)
 ```
-      from feel_matlab import *
+      from feel.matlab import *
       pwd()
 ```	  
       
 ####  (preserves namespace) [Recommended]
 ```
-      import feel_matlab as tmw
+      from feel import matlab as tmw
       tmw.pwd()
 ```	  
       
