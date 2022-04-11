@@ -5,6 +5,9 @@ from pprint import pprint as prettyprinter
 import builtins
 import sys
 
+from ...lib.disp_dict import disp_dict
+import collections
+
 # https://docs.python.org/2/library/sys.html#sys.displayhook
 # prints to sys.stdout and save value to __builtin__._
 orig_displayhook = sys.displayhook
@@ -15,7 +18,10 @@ def displayhook_pprint(value):
         builtins._ = value
         # Basically the difference is that this hook intercepts the
         # value and pretty print it instead of directly sending it to stdout
-        prettyprinter(value)
+        if isinstance(value, dict):
+            disp_dict(value)
+        else:
+            prettyprinter(value)
 
 builtins.pprint_on  = pprint_on  = lambda: setattr(sys, 'displayhook', displayhook_pprint)
 builtins.pprint_off = pprint_off = lambda: setattr(sys, 'displayhook', orig_displayhook)
