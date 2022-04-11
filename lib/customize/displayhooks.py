@@ -5,7 +5,7 @@ from pprint import pprint as prettyprinter
 import builtins
 import sys
 
-from ...lib.disp_dict import disp_dict
+from ...lib.disp_dict import disp_dict_fullview
 import collections
 
 # https://docs.python.org/2/library/sys.html#sys.displayhook
@@ -19,7 +19,7 @@ def displayhook_pprint(value):
         # Basically the difference is that this hook intercepts the
         # value and pretty print it instead of directly sending it to stdout
         if isinstance(value, dict):
-            disp_dict(value)
+            disp_dict_fullview(value)
         else:
             prettyprinter(value)
 

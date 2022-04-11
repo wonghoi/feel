@@ -38,6 +38,7 @@ from .lib.pause import pause
 ### Inspection
 disp = print
 from .lib.disp_dict import disp_dict
+from .lib.disp_dict import disp_dict_fullview
 string = repr   
 isprop = hasattr  
 from .lib.list_attrib import list_attrib

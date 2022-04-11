@@ -1,21 +1,17 @@
 import textwrap
-def print_dict_item(item, N_key=20, N_val=70, separator_str=' : ', shortener=None):
+def print_dict_item(item, N_key=20, N_val=75, sep=' : ', shortener=None):
     key = item[0]
     val = item[1]
     
-    lhs = key
-    N_lhs = N_key
-    if( len(key)>N_key and shortener is not None):
-        N_lhs = N_lhs - len(shortener)
-        lhs = textwrap.shorten(lhs, width=N_lhs, placeholder=shortener)        
-    lhs = lhs.rjust(N_lhs)
-    
-    sep = separator_str
+    lhs = key.rjust(N_key)
     
     try:
-        rhs = str(val)
+        rhs = str(val)                
     except:
-        raise TypeError("Type cannot be cased into string for display")
+        try:
+            rhs = type(val)
+        except:
+            raise TypeError("Type cannot be cased into string for display")
         
     N_rhs_indent = N_key+len(sep)
     rhs_indent   = ' '*N_rhs_indent
@@ -28,6 +24,13 @@ def print_dict_item(item, N_key=20, N_val=70, separator_str=' : ', shortener=Non
             
     lines = lhs + sep + rhs    
     return lines
+
+
+def disp_dict_fullview(d):
+    n_key = max([len(k)      for k in d.keys()])
+    n_val = max([len(str(k)) for k in d.values()])
+    lines = [print_dict_item(x, N_key=n_key, N_val=n_val) for x in d.items()]
+    print("\n".join(lines))
 
 def disp_dict(d, **kwargs):
     lines = [print_dict_item(x, **kwargs) for x in d.items()]
