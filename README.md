@@ -23,6 +23,13 @@ I'm not sacrificing 99%+ of convenience just to tip-toe around
 the design philosophy of Python. This macro is the compromise
 that I'm willing to make.
 
+Example features:
+- Beautify dictionary and list display by default
+- Display only relevant members
+- Files and path management
+- Debugging idioms
+- List (cell) idioms
+
 This is made primarily for my own convenience, casually 
 updated as I run into more frustrating Python UX issues.
 I just find it quicker to write the adapter code than
